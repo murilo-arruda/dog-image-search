@@ -8,7 +8,7 @@ import "./index.css";
 function App() {
   const [breedQuery, setBreedQuery] = useState("");
   const [isLoading, setLoading] = useState(false);
-  const [dogs, setDogs] = useState("");
+  const [dogs, setDogs] = useState([]);
   useEffect(() => {
     async function getDogs() {
       setLoading(true);
@@ -22,7 +22,7 @@ function App() {
       getDogs();
     }
   }, [breedQuery]);
-  const HandleBreedQuery = (q) => {
+  const HandleBreedQuery = (q: string) => {
     setBreedQuery(q);
   };
   return (

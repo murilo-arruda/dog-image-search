@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import breeds from "../breedList";
 import fuzzy from "fuzzy";
 
-const Search = ({ breedQuery }) => {
+interface Props {
+  breedQuery: Function;
+}
+
+const Search = ({ breedQuery }: Props) => {
   const [breed, setBreed] = useState("");
   const [possibleBreeds, setPossibleBreeds] = useState(breeds);
   const [alert, setAlert] = useState(false);
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (possibleBreeds.some((item) => item === breed)) {
       breedQuery(breed);
@@ -14,7 +18,7 @@ const Search = ({ breedQuery }) => {
       setAlert(true);
     }
   };
-  const handleChange = (e) => {
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setBreed(e.target.value);
   };
   useEffect(() => {
@@ -22,7 +26,7 @@ const Search = ({ breedQuery }) => {
     const result = fuzzy.filter(breed, breeds);
     setPossibleBreeds(result.map((i) => i.string));
   }, [breed]);
-  const handleClick = (dogBreed) => {
+  const handleClick = (dogBreed: string) => {
     setBreed(dogBreed);
     breedQuery(dogBreed);
   };

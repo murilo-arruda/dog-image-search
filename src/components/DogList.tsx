@@ -1,7 +1,12 @@
 import React from "react";
 import DogItem from "./DogItem";
 
-const DogList = ({ dogs }) => {
+interface Props {
+  dogs: Array<string>;
+  breed: string;
+}
+
+const DogList = ({ dogs, breed }: Props) => {
   return (
     <div className="img-wrapper">
       {dogs.map((dog, i) => (
