@@ -3,11 +3,11 @@ import DogItem from "./DogItem";
 
 const DogList = ({ dogs }) => {
   return (
-    <ul>
+    <div className="img-wrapper">
       {dogs.map((dog, i) => (
         <DogItem dogImage={dog} key={i} />
       ))}
-    </ul>
+    </div>
   );
 };
 

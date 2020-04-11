@@ -22,4 +22,44 @@ li {
 }
 .alert {
   color: red;
+  margin: 5px;
+}
+
+main {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.img-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  margin-bottom: 10px;
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+}
+@media (min-width: 769px) {
+  .img-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  img {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }

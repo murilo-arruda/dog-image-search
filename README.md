@@ -6,7 +6,7 @@ Created using React
 
 to do:
 
-- [ ] Add styles and responsiveness
+- [x] Add styles and responsiveness
 - [ ] Deploy (heroku, zeit...)
 - [ ] Refactor using Typescript
 

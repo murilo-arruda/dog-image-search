@@ -29,7 +29,7 @@ const Search = ({ breedQuery }) => {
   return (
     <div>
       {alert && <h3 className="alert">Please insert a valid breed</h3>}
-      <form onSubmit={handleSubmit}>
+      <form className="form-wrapper" onSubmit={handleSubmit}>
         <input
           list="breeds"
           placeholder="Search a dog breed"
